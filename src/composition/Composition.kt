@@ -34,4 +34,22 @@ fun main() {
     val mappings2 = map(::incr andThen ::quad)
     mappings(listOf(1,2,3))
     mappings2(listOf(1,2,3))
+
+    // Vorteile von Funktionskomposition am Beispiel von fold
+
+    // fold Definition in PureScript: (b -> a -> b) -> b -> List a -> b
+    val sum = listOf(1,2,3).fold(0) { acc, n -> acc + n }
+    println("sum direkt mit fold: $sum")
+    fun <A, B> fold(f: (B, A) -> B): (B) -> (List<A>) -> B = { initial -> { list -> list.fold(initial, f) } }
+    // add als freie top level funktion
+    val add: (Int, Int) -> Int = { x, y -> x + y }
+    val sum2 = fold(add)(0)
+    sum2(listOf(1,2,3))
+    sum2(listOf(1,2,3))
+    sum2(listOf(1,2,3))
+    sum2(listOf(1,2,3))
+
+    val mul: (Int, Int) -> Int = { x, y -> x * y }
+    val prodF = fold(mul)(1)
+
 }
