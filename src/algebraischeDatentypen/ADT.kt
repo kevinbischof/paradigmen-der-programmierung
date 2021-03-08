@@ -103,7 +103,7 @@ fun main() {
      */
 
     // Either<Boolean, Boolean> = 4
-    val a: Either<Boolean, Boolean> = Either.Left(true)
+    val a: Either<Boolean, Boolean> = Either.Left(true) // Either<Boolean, Boolean> >: Either<Boolean, nothing>
     val b: Either<Boolean, Boolean> = Either.Left(false)
     val c: Either<Boolean, Boolean> = Either.Right(true)
     val d: Either<Boolean, Boolean> = Either.Right(false)
