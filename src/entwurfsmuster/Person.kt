@@ -1,3 +1,5 @@
+package entwurfsmuster
+
 data class Person(val firstname: String, val age: Int)
 
 fun nameOfAdultsImperative(persons: List<Person>): List<String> {

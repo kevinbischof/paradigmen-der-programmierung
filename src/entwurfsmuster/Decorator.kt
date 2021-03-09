@@ -1,3 +1,5 @@
+package entwurfsmuster
+
 import kotlin.random.Random
 
 interface WordProvider {

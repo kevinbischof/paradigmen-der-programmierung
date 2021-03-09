@@ -1,3 +1,5 @@
+package entwurfsmuster
+
 interface MessageObserver {
     fun notifyOnPost() // aktualisieren / update
 }
